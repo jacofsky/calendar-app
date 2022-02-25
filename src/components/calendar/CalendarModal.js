@@ -7,7 +7,7 @@ import Modal from "react-modal";
 import DateTimePicker from 'react-datetime-picker';
 import { customStyles } from "../../helpers/calendar-modal-style";
 import { uiCloseModal } from "../../actions/ui";
-import { eventAddNew, eventClearActiveEvent, eventUpdated } from "../../actions/events";
+import { eventClearActiveEvent, eventStartAddNew, eventStartUpdate } from "../../actions/events";
 
 
 
@@ -102,26 +102,15 @@ const CalendarModal = () => {
       return setIsValid(false)
     }
 
-    setIsValid(true)
-
+    
     if(activeEvent === null){
-      dispatch(
-        eventAddNew(
-          {
-            ...formValues,
-            id: new Date().getTime(),
-            user: {
-              _id: '123',
-              name: 'Jaco'
-            }
-          }
-        )
-      )
-     
+      dispatch(eventStartAddNew(formValues))
+      
     } else {
-      dispatch(eventUpdated(formValues))
+      dispatch(eventStartUpdate(formValues))
     }
-
+    
+    setIsValid(true)
     dispatch(closeModal())
     
   }
@@ -144,13 +133,14 @@ const CalendarModal = () => {
       >
       
         <div className="mb-3">
-          <label for="floatingInput">Fecha y hora inicio</label>
-          <DateTimePicker className='form-control' onChange={handleStartDateChange} value={dateStart} />
+          <label htmlFor="floatingInput">Fecha y hora inicio</label>
+          <DateTimePicker className='form-control' onChange={handleStartDateChange} value={  (activeEvent) ? activeEvent.start : dateStart }
+ />
         </div>
 
         <div className="mb-3">
-          <label for="floatingInput">Fecha y hora de fin</label>
-          <DateTimePicker className='form-control' onChange={handleEndDateChange} value={dateEnd} minDate={dateStart} />
+          <label htmlFor="floatingInput">Fecha y hora de fin</label>
+          <DateTimePicker className='form-control' onChange={handleEndDateChange} value={   (activeEvent) ? activeEvent.end : dateEnd } minDate={dateStart} />
         </div>
 
         <hr />
