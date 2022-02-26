@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <DeleteEventFab/> should first 1`] = `
+<button
+  className="btn btn-danger fab-danger"
+  onClick={[Function]}
+>
+  <i
+    className="bi bi-trash3"
+  />
+</button>
+`;

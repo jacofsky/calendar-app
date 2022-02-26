@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in LoginScreen should correctly 1`] = `
+<div
+  className="container login-container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-6 login-form-1"
+    >
+      <h3
+        className="fs-1"
+      >
+        Ingreso
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="lEmail"
+            onChange={[Function]}
+            placeholder="Correo"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="lPassword"
+            onChange={[Function]}
+            placeholder="Contraseña"
+            type="password"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="btnSubmit"
+            type="submit"
+            value="Login"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="col-md-6 login-form-2"
+    >
+      <h3
+        className="fs-1"
+      >
+        Registro
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="rNombre"
+            onChange={[Function]}
+            placeholder="Nombre"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="rEmail"
+            onChange={[Function]}
+            placeholder="Correo"
+            type="email"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="rPassword1"
+            onChange={[Function]}
+            placeholder="Contraseña"
+            type="password"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            name="rPassword2"
+            onChange={[Function]}
+            placeholder="Repita la contraseña"
+            type="password"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <input
+            className="btnSubmit"
+            type="submit"
+            value="Crear cuenta"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

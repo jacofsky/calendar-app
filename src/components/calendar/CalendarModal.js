@@ -10,8 +10,10 @@ import { uiCloseModal } from "../../actions/ui";
 import { eventClearActiveEvent, eventStartAddNew, eventStartUpdate } from "../../actions/events";
 
 
+if (process.env.NODE_ENV !== 'test') {
+  Modal.setAppElement("#root");
+}
 
-Modal.setAppElement("#root");
 
 const now = moment().minutes(0).seconds(0).add(1, 'hours');
 const nowPlus1 = now.clone().add(1, 'hours')
@@ -124,6 +126,7 @@ const CalendarModal = () => {
       closeTimeoutMS={200}
       className="modal"
       overlayClassName="modal-fondo"
+      ariaHideApp={ !process.env.NODE_ENV === 'test'  }
     >
       <h1 className="text-center"> { activeEvent ? `Editar evento` : `Nuevo evento`} </h1>
       <hr />
